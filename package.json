@@ -21,6 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "copy-pspdfkit": "xcopy /s/y \"./node_modules/pspdfkit/dist/pspdfkit-lib\" \"./public/pspdfkit-lib\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
