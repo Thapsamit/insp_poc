@@ -21,6 +21,7 @@ export default function PSDViewer() {
         container,
         // The document to open.
         // document: require("../assets/sample2.pdf"),
+        disableWebAssemblyStreaming: true,
         document:
           "https://www.mtsac.edu/eops/tutoring/Sample_Scholarship_Essay.pdf",
 
