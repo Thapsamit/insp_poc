@@ -1,23 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import "./App.css";
+import FileViewers from "./components/FileViewers";
+import PdfDoc from "./components/PdfDoc";
+import MikePdfDoc from "./components/MikePdfDoc";
+import PlangridFileViewer from "./components/PlangridFileViewer";
+import ViewerFrame from "./components/ViewerFrame";
+import WhiteBoard from "./components/WhiteBoard";
+import NativeDocViewer from "./components/NativeDocViewer";
+import PSDViewer from "./components/PSDViewer";
 
 function App() {
+  // below is disable
+  // useEffect(() => {
+  //   window.addEventListener("contextmenu", (e) => {
+  //     e.preventDefault();
+  //   });
+  // }, []);
+  const handleKeyDown = (event) => {
+    if (event.ctrlKey && event.shiftKey && event.key === "i") {
+      event.preventDefault(); // Prevent the default Ctrl+Shift+I behavior
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <PSDViewer />
+      {/* <NativeDocViewer /> */}
+      {/* <FileViewers /> */}
+      {/* <PdfDoc /> */}
+      {/* <MikePdfDoc /> */}
+      {/* <PlangridFileViewer /> */}
+      {/* <ViewerFrame /> */}
+      {/* <WhiteBoard /> */}
     </div>
   );
 }
