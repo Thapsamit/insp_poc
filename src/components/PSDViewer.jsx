@@ -20,10 +20,9 @@ export default function PSDViewer() {
         // Container where PSPDFKit should be mounted.
         container,
         // The document to open.
-        // document: require("../assets/sample2.pdf"),
+
         disableWebAssemblyStreaming: true,
-        document:
-          "https://www.mtsac.edu/webdesign/accessible-docs/word/example03.docx",
+        document: require("../assets/resume.doc"),
 
         // document:
         //   "https://insp-development-bucket.s3.ap-south-1.amazonaws.com/files/roomId_F5vOsurp3D/resume.docx?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZHE7QK27AWMDOJS6%2F20231005%2Fap-south-1%2Fs3%2Faws4_request&X-Amz-Date=20231005T035005Z&X-Amz-Expires=3600&X-Amz-Signature=88a27c2d4e34ee170dc6aa0231696e025dc6dbae581cc76dc0e138d3fe06bf96&X-Amz-SignedHeaders=host",
